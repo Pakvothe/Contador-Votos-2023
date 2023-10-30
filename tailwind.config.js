@@ -28,6 +28,9 @@ module.exports = {
       boxShadow: {
         belo: "0px 4px 4px rgba(51, 51, 51, 0.03)",
       },
+      backgroundImage: {
+        bsas: "url('/src/assets/backgrounds/bsas.jpg')",
+      },
     },
   },
   plugins: [],

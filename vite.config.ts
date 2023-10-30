@@ -2,7 +2,6 @@
 
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
-import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import { ViteMinifyPlugin } from "vite-plugin-minify";
 import { viteObfuscateFile } from "vite-plugin-obfuscator";
 
@@ -38,7 +37,6 @@ const obfuscator_options = {
 export default defineConfig({
   plugins: [
     react(),
-    ViteImageOptimizer(),
     ViteMinifyPlugin({}),
     viteObfuscateFile(obfuscator_options),
   ],
@@ -61,14 +59,5 @@ export default defineConfig({
 
   define: {
     "process.env": {},
-  },
-  server: {
-    proxy: {
-      "/api": {
-        target: "https://api.belo.app",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
-      },
-    },
   },
 });
